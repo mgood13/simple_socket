@@ -11,6 +11,7 @@ app.config['SECRET_KEY'] = 'simplesecret'
 socketio = SocketIO(app, cors_allowed_origins='*')
 
 
+# The main app that will run when the Flask server is run
 @app.route('/')
 @cross_origin()
 def index():
@@ -18,22 +19,17 @@ def index():
     return render_template('index.html')
 
 
-
-#@socketio.on('message')
-#def handleMessage(msg):
-#    print('Message: ' + msg)
-#    send(msg, broadcast = True)
-
-
+# What to do with the messages sent to the socket server
 @socketio.on('my response')
 def replytomessage(json):
     send(json, broadcast = True)
 
-
+# Confirmation of the received message on the server side
 def messageReceived(methods = ['GET', 'POST']):
     print('Got your message')
 
 
+# Log the received message and pass it along to the socket.io server to broadcast to all connected users
 
 
 @socketio.on('my event')
