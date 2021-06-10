@@ -3,20 +3,44 @@
     <title>Chat Room</title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js" integrity="sha512-aMGMvNYu8Ue4G+fHa359jcPb1u+ytAF+P2SCb+PxrjCdO3n3ZTxJ30zuH39rimUggmTwmh2u7wvQsDTHESnmfQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 </head>
 
 <body>
 
+    <h3>Welcome to the Chat App</h3>
+
+
     <ul id = 'messages'>
     </ul>
+    <div id = 'datastream'><ul></ul></div>
+    <div id = 'bare'></div>
 
-    <input type = 'text' id = 'MyMessage'>
-    <button id = "sendbutton">Send</button>
+<div class = 'row'>
+    <div class = 'col-md-4'></div>
+    <div class = 'col-md-4'>
+        <ul class="list-group" id = 'chatlist'>
+
+        </ul>
+
+    </div>
+
+
+</div>
 
 
 
+    <input type = 'text' id = 'myname'>
+    <button id = 'inputname'>Submit</button>
+
+
+
+
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
 <script type="text/javascript" src="static/js/mysocket.js"></script>
 
 </body>

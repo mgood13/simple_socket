@@ -19,13 +19,27 @@ def index():
 
 
 
-@socketio.on('message')
-def handleMessage(msg):
-    print('Message: ' + msg)
-    send(msg, broadcast = True)
+#@socketio.on('message')
+#def handleMessage(msg):
+#    print('Message: ' + msg)
+#    send(msg, broadcast = True)
+
+
+@socketio.on('my response')
+def replytomessage(json):
+    send(json, broadcast = True)
+
+
+def messageReceived(methods = ['GET', 'POST']):
+    print('Got your message')
 
 
 
+
+@socketio.on('my event')
+def handle_my_custom_event(json, methods = ['GET', 'POST']):
+    print('Message my event: {}'.format(json))
+    socketio.emit('my response', json, callback=messageReceived)
 
 
 
