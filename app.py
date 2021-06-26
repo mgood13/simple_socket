@@ -35,6 +35,9 @@ def messageReceived(methods = ['GET', 'POST']):
 @socketio.on('my event')
 def handle_my_custom_event(json, methods = ['GET', 'POST']):
     print('Message my event: {}'.format(json))
+
+    # pass to sql
+
     socketio.emit('my response', json, callback=messageReceived)
 
 
