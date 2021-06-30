@@ -2,12 +2,14 @@ from flask import Flask, render_template
 from flask_socketio import SocketIO, send
 from flask_cors import CORS, cross_origin
 
+from gevent import monkey
+
 
 app = Flask(__name__)
 #CORS(app, cors_allowed_origins='https://localhost')
 
 app.config['SECRET_KEY'] = 'simplesecret'
-
+monkey.patch_all()
 socketio = SocketIO(app)
 
 
