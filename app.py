@@ -4,11 +4,11 @@ from flask_cors import CORS, cross_origin
 
 
 app = Flask(__name__)
-CORS(app, cors_allowed_origins='https://localhost')
+#CORS(app, cors_allowed_origins='https://localhost')
 
 app.config['SECRET_KEY'] = 'simplesecret'
 
-socketio = SocketIO(app, cors_allowed_origins='*')
+socketio = SocketIO(app)
 
 
 # The main app that will run when the Flask server is run
