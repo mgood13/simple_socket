@@ -1,11 +1,11 @@
-var socket = io.connect('http://127.0.0.1:5000')
+var socket = io()
 
 // Storage for the color options for the buttons
 colors = {'red': '#FF0602', 'green': '#61FF33', 'blue': '#0502FF', 'black': '#000000'}
 $(document).ready(function(){
 
         // Connect to the port used by the Flask application
-        var socket = io.connect('http://127.0.0.1:5000')
+        var socket = io()
 
         // When a connection is registered pass along this message
         socket.on('connect', function(){

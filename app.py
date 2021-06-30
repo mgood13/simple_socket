@@ -13,7 +13,7 @@ socketio = SocketIO(app)
 
 # The main app that will run when the Flask server is run
 @app.route('/')
-@cross_origin()
+#@cross_origin()
 def index():
 
     return render_template('index.html')
